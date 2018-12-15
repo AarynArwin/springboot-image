@@ -10,9 +10,9 @@ package com.geekerit.springbootimage.constants;
 public class QiNiuYunConstants {
 
 
-    public static final String AK = "62UNf6EeRYaQ8wUdc5CWm3II4zvaxnb7tYTNEKCJ";
-    public static final String SK = "T31i2JI2DytG4P-6F4g3CwN_WcVLnnODuXgYLeFn";
-    public static final String BUCKET = "chengnan";
+    public static final String AK = "";
+    public static final String SK = "";
+    public static final String BUCKET = "";
 
 
 
