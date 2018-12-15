@@ -1,6 +1,5 @@
 package com.geekerit.springbootimage.service.impl;//package com.chengnanhuakai.upload.service.impl;
 
-import com.geekerit.springbootimage.config.Qiniu;
 import com.geekerit.springbootimage.constants.QiNiuYunConstants;
 import com.geekerit.springbootimage.service.QiniuyunService;
 import com.geekerit.springbootimage.utils.QiNiuYunUtil;
@@ -17,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,22 +33,19 @@ public class QiniuyunServiceImpl implements QiniuyunService {
 
     private static final Logger logger = LoggerFactory.getLogger(QiniuyunServiceImpl.class);
 
-    @Resource
-    private Qiniu qiniu;
-
     /** 获取auth */
     private final Auth auth = QiNiuYunUtil.getAuth();
 
     @Override
     public String getSimpleToken() {
-        String upToken = auth.uploadToken(qiniu.getBucket());
+        String upToken = auth.uploadToken(QiNiuYunConstants.BUCKET);
         logger.info("Create simple upload token : " + upToken);
         return upToken;
     }
 
     @Override
     public String getOverrideToken(String fileKey) {
-        String upToken = auth.uploadToken(qiniu.getBucket(), fileKey);
+        String upToken = auth.uploadToken(QiNiuYunConstants.BUCKET, fileKey);
         logger.info("Create override upload token : " + upToken);
         return upToken;
     }
@@ -60,7 +55,7 @@ public class QiniuyunServiceImpl implements QiniuyunService {
         StringMap putPolicy = new StringMap();
         putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}");
         long expireSeconds = 3600;
-        String upToken = auth.uploadToken(qiniu.getBucket(), null, expireSeconds, putPolicy);
+        String upToken = auth.uploadToken(QiNiuYunConstants.BUCKET, null, expireSeconds, putPolicy);
         logger.info("Create upload token with return info : " + upToken);
         return upToken;
     }

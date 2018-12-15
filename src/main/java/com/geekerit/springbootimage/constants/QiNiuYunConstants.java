@@ -9,9 +9,10 @@ package com.geekerit.springbootimage.constants;
  */
 public class QiNiuYunConstants {
 
-
+    /** 七牛云开发者信息 */
     public static final String AK = "";
     public static final String SK = "";
+    /** 七牛云空间名 */
     public static final String BUCKET = "";
 
 

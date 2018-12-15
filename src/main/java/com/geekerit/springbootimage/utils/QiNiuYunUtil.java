@@ -1,6 +1,5 @@
 package com.geekerit.springbootimage.utils;//package com.chengnanhuakai.upload.utils;
 
-import com.geekerit.springbootimage.config.Qiniu;
 import com.geekerit.springbootimage.constants.QiNiuYunConstants;
 import com.qiniu.util.Auth;
 import org.springframework.stereotype.Component;
