@@ -1,2 +1,2 @@
-# springboot-image
-springboot实现免费图床
+# springboot集成七牛云实现免费图床
+[详细介绍](http://blog.geekerit.com/%E7%BC%96%E7%A8%8B/2018/12/15/%E5%9F%BA%E4%BA%8E%E4%B8%83%E7%89%9B%E4%BA%91%E4%BD%BF%E7%94%A8Springboot%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/#)
